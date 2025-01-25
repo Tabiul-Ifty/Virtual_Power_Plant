@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  test:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.test
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:test
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver
