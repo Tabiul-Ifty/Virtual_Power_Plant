@@ -10,7 +10,7 @@ This Spring Boot application manages battery registrations and provides an API f
 Java 17
 Maven
 H2 database
-For some reason i couldn't install the PostgreSQL Database in my system. That's why i had to use H2 Database for this project, yet there are some limitation for this database but the code follows a stucture that if the database is changed there will not be any imapct.
+I couldn't install the PostgreSQL Database in my system for some reason. That's why I had to use the H2 Database for this project, there are some limitations for this database but the code follows a structure that if the database is changed there will not be any impact.
 
 #####Setup Instructions#####
 
@@ -25,7 +25,7 @@ GET /api/batteries/range: Query batteries by postcode range
 ######Running Tests#######
 
 Run mvn test to execute unit and integration tests
-or Right Click to the Root folder and Click Run 'All Tests'
+or Right Click on the Root folder and Click Run 'All Tests'
 
 ######Additional Features#######
 
@@ -36,14 +36,14 @@ Comprehensive error handling
 API Automation
 Performance And Data Driven testing
 
-[NOTE] SOME OF THE TESTCASES MIGHT NOT PROVIDE DESIRED OUTPUT DUE TO THE DATABASE. THE VALUES first NEEDS TO BE SAVED IN DB BEFORE RUNNING THE ASSERTIONS.
+[NOTE] SOME OF THE TEST CASES MIGHT NOT PROVIDE DESIRED OUTPUT DUE TO THE DATABASE. THE VALUES first NEEDS TO BE SAVED IN DB BEFORE RUNNING THE ASSERTIONS.
 
-Unfortunatly. I could not use Docker for test container due to my systems limitation, however i have given the docker file structure and other elements as well.
+Unfortunatly. I could not use Docker for the test container due to my system limitation, however, I have given the docker file structure and other elements as well.
 DOCKER RUN TESTS: docker-compose -f docker/docker-compose.test.yml up --build
 
 
 ####Testing Endpoints####
-Use Postman or cURL, i have used cURL, it is easy to  use.
+Use Postman or cURL, I have used cURL, it is easy to  use.
 
 #####Commands#####
 
@@ -74,22 +74,37 @@ curl "http://localhost:8080/api/batteries/range?startPostcode=abc&endPostcode=de
 
 ::MORE TESTING SCOPES::
 
-Validate Successful Single Battery Registration.
-Validate Bulk Battery Registration Endpoint.
-Verify Database Persistence of Battery Entries.
-Validate Battery Name Alphabetical Sorting.
-Verify Total Watt Capacity Calculation Accuracy.
-Validate Average Watt Capacity Computation.
-Test Empty Result Set for Non-Matching Postcode Range.
-Check High Volume Battery Registration Stress Test.
-Validate Invalid Data Type Submissions.
-Validate Blocking of Negative Watt Capacity Entries.
-Validate Preventing Duplicate Battery Registrations.
-Check Minimum Watt Capacity Filtering.
-Check Maximum Watt Capacity Filtering.
-Validate API Error Response Mechanisms.
-Check Input Validation Error Logging.
-Check System Event Logging Verification.
+- Validate Successful Single Battery Registration.
+- Validate Bulk Battery Registration Endpoint.
+- Verify Database Persistence of Battery Entries.
+- Validate Battery Name Alphabetical Sorting.
+- Verify Total Watt Capacity Calculation Accuracy.
+- Validate Average Watt Capacity Computation.
+- Test Empty Result Set for Non-Matching Postcode Range.
+- Check High Volume Battery Registration Stress Test.
+- Validate Invalid Data Type Submissions.
+- Validate Blocking of Negative Watt Capacity Entries.
+- Validate Preventing Duplicate Battery Registrations.
+- Check Minimum Watt Capacity Filtering.
+- Check Maximum Watt Capacity Filtering.
+- Validate API Error Response Mechanisms.
+- Check Input Validation Error Logging.
+- Check System Event Logging Verification.
+
+::Security measures that could be added::
+
+- JWT authentication
+- Input validation
+- CORS configuration
+- Role-based access
+
+::Possible improvements in the overall system::
+
+- Caching for frequent queries
+- API versioning
+- More comprehensive logging
+- Pagination for large datasets
+- Transaction management
 
 
 
